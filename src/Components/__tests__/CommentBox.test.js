@@ -1,10 +1,13 @@
+import React from 'react'
 import {mount} from 'enzyme';
-//  testing with full dom rendering for learning purposes, shallow testing would be just fine.
-import React from 'react';
 import CommentBox from 'Components/CommentBox';
+import Root from 'Root';
 let wrapper;
 beforeEach(()=>{
-   wrapper = mount(<CommentBox />);
+  //  testing with full dom rendering for learning purposes, shallow testing would be just fine.
+   wrapper = mount(<Root>
+     <CommentBox />
+    </Root>);
 })
 
 it('has a text area and a button', ()=> {

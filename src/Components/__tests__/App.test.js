@@ -1,21 +1,26 @@
 import App from '../App';
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import CommentBox from 'Components/CommentBox';
 import CommentList from 'Components/CommentList';
+import Root from 'Root';
 let wrapper;
 beforeEach(() => {
-  wrapper = shallow(<App />);
-})
+  wrapper = mount(
+    <Root>
+      <App />
+    </Root>);
 
-it('shows a comment box', ()=> {
-  const div = document.createElement('div');
-
-
-  //expect(wrapper.find('CommentBox')).to.have.lengthOf(1);
-  expect(wrapper.find('CommentBox').length).toEqual(1);
-})
+});
+afterEach(()=>{
+  wrapper.unmount();
+});
 
 it('shows a comment list',()=>{
+  console.log(wrapper.find('CommentList').length);
   expect(wrapper.find('CommentList').length).toEqual(1);
-})
+});
+it('shows a comment box', ()=> {
+console.log(wrapper.find('CommentBox').length);
+  expect(wrapper.find('CommentBox').length).toEqual(1);
+});

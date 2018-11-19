@@ -18,7 +18,7 @@ class CommentList extends Component {
       </div>
     )
   }
-}
+}  
 function mapStateToProps({comments}){
   return {
     comments

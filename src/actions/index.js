@@ -11,7 +11,7 @@ export function save_comment(comment){
 
 export async function fetchComments(){
   const response = await axios.get('http://jsonplaceholder.typicode.com/comments');
-  console.log(response);
+  console.log(response); 
   const rresponse = response.data.map(comment => comment.name);
   return({
     type: FETCH_COMMENTS,

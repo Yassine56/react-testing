@@ -19,7 +19,7 @@ class CommentBox extends Component {
     this.setState({comment : ''});
   }
 
-  render() {
+  render() { 
     return (
     <div>
       <form onSubmit={this.handleSubmit}>
